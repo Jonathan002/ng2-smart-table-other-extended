@@ -1,4 +1,4 @@
-import { Component, Input, Output, SimpleChange, EventEmitter, OnChanges } from '@angular/core';
+import { Component, Input, Output, SimpleChange, EventEmitter, OnChanges, TemplateRef } from '@angular/core';
 
 import { Grid } from './lib/grid';
 import { DataSource } from './lib/data-source/data-source';
@@ -12,7 +12,7 @@ import { LocalDataSource } from './lib/data-source/local/local.data-source';
   templateUrl: './ng2-smart-table.component.html',
 })
 export class Ng2SmartTableComponent implements OnChanges {
-
+  @Input() tableHeadTopTemplate: TemplateRef<any>;
   @Input() source: any;
   @Input() settings: Object = {};
 

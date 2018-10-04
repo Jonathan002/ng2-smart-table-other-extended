@@ -14,7 +14,10 @@ export class AdvancedExamplesCustomEditorComponent {
   data = [
     {
       id: 1,
-      name: 'Leanne Graham',
+      name: {
+        td: 'Test Graham',
+        class: 'test-cell-class'
+      },
       username: 'Bret',
       link: '<a href="http://www.google.com">Google</a>',
     },

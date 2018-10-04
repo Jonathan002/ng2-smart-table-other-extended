@@ -12,15 +12,19 @@ export class BasicExampleDataComponent {
     columns: {
       id: {
         title: 'ID',
+        class: 'test-class-1'
       },
       name: {
         title: 'Full Name',
+        class: 'test-class-2'
       },
       username: {
         title: 'User Name',
+        class: 'test-class-3'
       },
       email: {
         title: 'Email',
+        class: 'test-class-4'
       },
     },
   };
@@ -28,7 +32,10 @@ export class BasicExampleDataComponent {
   data = [
     {
       id: 1,
-      name: 'Leanne Graham',
+      name: {
+        td: 'Leanne Graham With Custom Cell Class',
+        class: 'test-cell-class'
+      },
       username: 'Bret',
       email: 'Sincere@april.biz',
     },

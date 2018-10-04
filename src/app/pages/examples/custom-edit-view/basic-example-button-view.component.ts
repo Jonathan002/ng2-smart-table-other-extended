@@ -63,7 +63,10 @@ export class BasicExampleButtonViewComponent implements OnInit {
   data = [
     {
       id: 1,
-      name: 'Leanne Graham',
+      name: {
+        td: 'Leanne Graham Cracker',
+        class: 'test-cell-class'
+      },
       username: 'Bret',
       email: 'Sincere@april.biz',
       button: 'Button #1',

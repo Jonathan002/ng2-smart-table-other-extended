@@ -4,11 +4,18 @@ import { Row } from './row';
 
 export class Cell {
 
+  newClass: any = '';
   newValue: any = '';
   protected static PREPARE = (value: any) => value;
 
-  constructor(protected value: any, protected row: Row, protected column: any, protected dataSet: DataSet) {
+  constructor(
+    protected value: any, 
+    protected row: Row, 
+    protected column: any, 
+    protected dataSet: DataSet, 
+    protected className: any) {
     this.newValue = value;
+    this.newClass = className ? className : '';
   }
 
   getColumn(): Column {
@@ -23,6 +30,10 @@ export class Cell {
     const valid = this.column.getValuePrepareFunction() instanceof Function;
     const prepare = valid ? this.column.getValuePrepareFunction() : Cell.PREPARE;
     return prepare.call(null, this.value, this.row.getData(), this);
+  }
+
+  getClass(): any {
+    return this.newClass;
   }
 
   setValue(value: any): any {

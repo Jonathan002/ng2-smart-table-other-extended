@@ -11,7 +11,10 @@ export class AdvancedExamplesTypesComponent {
   data = [
     {
       id: 1,
-      name: 'Leanne Graham',
+      name: {
+        td: 'Leanne Graham',
+        class: 'test-cell-class'
+      },
       username: 'Bret',
       email: 'Sincere@april.biz',
       comments: 'Lorem ipsum dolor sit amet, ex dolorem officiis convenire usu.',

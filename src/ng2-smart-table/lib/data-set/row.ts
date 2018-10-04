@@ -50,7 +50,14 @@ export class Row {
 
   createCell(column: Column): Cell {
     const defValue = (column as any).settings.defaultValue ? (column as any).settings.defaultValue : '';
-    const value = typeof this.data[column.id] === 'undefined' ? defValue : this.data[column.id];
-    return new Cell(value, this, column, this._dataSet);
+    let value;
+    let className;
+    if (this.data[column.id] && this.data[column.id].constructor.name === 'Object') {
+      value = this.data[column.id].td ? this.data[column.id].td : defValue;
+      className = this.data[column.id].class ? this.data[column.id].class : ''
+    } else {
+      value = typeof this.data[column.id] === 'undefined' ? defValue : this.data[column.id];
+    }
+    return new Cell(value, this, column, this._dataSet, className);
   }
 }

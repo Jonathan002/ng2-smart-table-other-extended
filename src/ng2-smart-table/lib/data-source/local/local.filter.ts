@@ -8,7 +8,7 @@ export class LocalFilter {
     const filter: Function = customFilter ? customFilter : this.FILTER;
 
     return data.filter((el) => {
-      const value = typeof el[field] === 'undefined' || el[field] === null ? '' : el[field];
+      const value = typeof el[field] === 'undefined' || el[field] === null ? '' : (typeof el[field].td === 'string') ? el[field].td : el[field];
       return filter.call(null, value, search);
     });
   }

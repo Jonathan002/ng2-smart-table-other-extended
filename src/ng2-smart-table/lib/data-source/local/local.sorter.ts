@@ -1,6 +1,9 @@
 export class LocalSorter {
 
   protected static COMPARE = (direction: any, a: any, b: any) => {
+    a = (typeof a.td === 'string') ? a.td : a;
+    b = (typeof b.td === 'string') ? b.td : b;
+
     if (a < b) {
       return -1 * direction;
     }
@@ -11,7 +14,6 @@ export class LocalSorter {
   }
 
   static sort(data: Array<any>, field: string, direction: string, customCompare?: Function): Array<any> {
-
     const dir: number = (direction === 'asc') ? 1 : -1;
     const compare: Function = customCompare ? customCompare : this.COMPARE;
 

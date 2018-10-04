@@ -48,7 +48,10 @@ export class BasicExampleCustomActionsComponent {
   data = [
     {
       id: 1,
-      name: 'Leanne Graham',
+      name: {
+        td: 'Leanne Graham',
+        class: 'test-cell-class'
+      },
       username: 'Bret',
       email: 'Sincere@april.biz',
     },

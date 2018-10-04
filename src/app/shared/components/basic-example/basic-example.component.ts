@@ -13,16 +13,20 @@ export class BasicExampleComponent {
       id: {
         title: 'ID',
         width: '100px',
+        class: 'check-if-class-works'
       },
       name: {
         title: 'Full Name',
         width: '40%',
+        class: 'check-if-class-works'
       },
       username: {
         title: 'User Name',
+        class: 'check-if-class-works'
       },
       email: {
         title: 'Email',
+        class: 'check-if-class-works'
       },
     },
   };

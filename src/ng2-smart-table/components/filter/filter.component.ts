@@ -71,7 +71,10 @@ export class FilterComponent implements OnChanges {
     }
   }
 
-  onFilter(query: string) {
+  onFilter(query: string | any) {
+    if (typeof query !== 'string' && typeof query === 'object') {
+      query = query.td ?  query.td : ''
+    }
     this.source.addFilter({
       field: this.column.id,
       search: query,

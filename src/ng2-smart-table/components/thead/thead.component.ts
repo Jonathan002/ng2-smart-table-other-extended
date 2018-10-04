@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter, OnChanges} from '@angular/core';
+import {Component, Input, Output, EventEmitter, OnChanges, TemplateRef} from '@angular/core';
 
 import { Grid } from '../../lib/grid';
 import { DataSource } from '../../lib/data-source/data-source';
@@ -8,7 +8,7 @@ import { DataSource } from '../../lib/data-source/data-source';
     templateUrl: './thead.component.html',
 })
 export class Ng2SmartTableTheadComponent implements OnChanges {
-
+    @Input() tableHeadTopTemplate: TemplateRef<any>;
     @Input() grid: Grid;
     @Input() source: DataSource;
     @Input() isAllSelected: boolean;
