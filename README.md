@@ -52,7 +52,7 @@ data = [
 
 In .html template file
 ```
-<ng2-smart-table-other-extended [settings]="settings" [source]="data"></ng2-smart-table-other-extended>
+<ng2-smart-table [settings]="settings" [source]="data"></ng2-smart-table>
 ```
 
 ## Ng2 Smart Table Info and Documentation,
